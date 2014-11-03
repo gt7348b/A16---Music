@@ -13,16 +13,18 @@ var playlistView = Backbone.View.extend({
     var template = $('#songlist').html();
     var render_song = _.template(template);
 
-    console.log(list);
+    console.log(template);
 
     _.each(list.models, function(item){
       console.log(item.get('title'));
+      console.log(item.get('artist'));
+      console.log(item.get('link'));
 
       self.$el.append(render_song(item.attributes));
 
     });
 
-    $('#songlist').html(this.el);
+    $('#playlist').html(this.el);
 
     return this;
   },
