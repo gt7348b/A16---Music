@@ -1,14 +1,18 @@
-var Song = Backbone.Model.extend({
-  defaults: {
-    title: '',
-    artist: '',
-    link: ''
-  },
+(function(){
 
-  idAttribute: '_id',
+    App.Models.Song = Backbone.Model.extend({
+      defaults: {
+        title: '',
+        artist: '',
+        link: ''
+      },
 
-  initialize: function(){
-  //  console.log('Lucky?')
-  }
+      idAttribute: '_id',
 
-});
+      initialize: function(){
+      //  console.log('Lucky?')
+      }
+
+    });
+
+}());

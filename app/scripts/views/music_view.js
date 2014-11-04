@@ -1,27 +1,55 @@
-var playlistView = Backbone.View.extend({
+(function(){
 
-  tagName: 'ul',
-  className: 'musiclist',
+    App.Views.playlistView = Backbone.View.extend({
 
-  initialize: function(options){
-    //console.log('initialized');
-    this.render(options.list);
-  },
+      tagName: 'ul',
+      className: 'musiclist',
 
-  render: function(list){
-    var self = this;
-    var template = $('#songlist').html();
-    var render_song = _.template(template);
+      events: {
+        'click li': 'deleteSong'
+      },
 
-    _.each(list.models, function(item){
+      initialize: function(){
+        //console.log('initialized');
+        this.render(App.work_playlist);
 
-      self.$el.append(render_song(item.attributes));
+        App.work_playlist.on('sync', this.render, this);
+        App.work_playlist.on('destry', this.render, this);
+      },
+
+      render: function(){
+        var self = this;
+        var template = $('#songlist').html();
+        var render_song = _.template(template);
+
+        _.each(App.work_playlist.models, function(item){
+
+          self.$el.append(render_song(item.attributes));
+
+          //console.log(item.id);
+
+        });
+
+        $('#playlist').html(this.el);
+
+        return this;
+      },
+
+      deleteSong: function(event){
+        event.preventDefault();
+
+        var id = $(event.target).attr('id');
+
+        //console.log(id);
+
+        var eliminate = App.work_playlist.get(id);
+
+        console.log(eliminate);
+
+        eliminate.destroy();
+
+      }
 
     });
 
-    $('#playlist').html(this.el);
-
-    return this;
-  },
-
-});
+}());
