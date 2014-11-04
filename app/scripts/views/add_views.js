@@ -34,7 +34,7 @@
 
           newsong.save();
 
-
+          $('#songInput')[0].reset();
         },
 
     })
