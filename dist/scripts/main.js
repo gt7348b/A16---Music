@@ -41,7 +41,7 @@
       className: 'musiclist',
 
       events: {
-        'click li': 'deleteSong'
+        'click span': 'deleteSong'
       },
 
       initialize: function(){
@@ -79,7 +79,7 @@
 
         var eliminate = App.work_playlist.get(id);
 
-        console.log(eliminate);
+        //console.log(eliminate);
 
         eliminate.destroy();
 

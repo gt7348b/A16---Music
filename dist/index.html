@@ -18,7 +18,7 @@
     <div class="hero-unit">
       <h1>Music List</h1>
       <p>This is a list of music that helps me code:</p>
-      <div id='playlist'>
+      <div id='playlist' class='list'>
       </div>
 
       <div id='addnew'>
@@ -29,7 +29,10 @@
 
 
     <script id='songlist'type='text/template'>
-      <li id='<%= _id %>'> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
+      <li id='<%= _id %>'> <a href='<%= link %>'> <%= title %> </a> by <%= artist %>
+      <span id="<%= _id %>" class='delete_btn'>  X</span>
+
+      </li>
     </script>
 
     <script id='newsong' type='text/template'>
