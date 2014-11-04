@@ -37,7 +37,10 @@
 
 
     <script id='songlist'type='text/template'>
-      <li id='<%= _id %>'> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
+      <li id='<%= _id %>'> <a href='<%= link %>'> <%= title %> </a> by <%= artist %>
+      <span id="<%= _id %>" class='delete_btn'>  X</span>
+
+      </li>
     </script>
 
     <script id='newsong' type='text/template'>
