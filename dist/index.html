@@ -20,23 +20,25 @@
       <p>This is a list of music that helps me code:</p>
       <div id='playlist'>
       </div>
+
+      <div class='add-new'>
+      <h2>Add a new song</h2>
+        <form id="titleInput"  action="index.html" method="post">
+          <input id='input_title' type="text" placeholder=" Song Title">
+        </form>
+        <form id="artistInput"  action="index.html" method="post">
+          <input id='input_artist' type="text" placeholder=" Artist Name">
+        </form>
+        <form id="linkInput"  action="index.html" method="post">
+          <input id='input_link' type="text" placeholder=" Insert link">
+        </form>
+        <p class="btn">
+          <button id="button">Add New Song!</button>
+        </p>
+      </div>
     </div>
 
-    <div class='add-new'>
-    <h2>Add a new song</h2>
-      <form id="titleInput"  action="index.html" method="post">
-        <input id='input_title' type="text" placeholder=" Song Title">
-      </form>
-      <form id="artistInput"  action="index.html" method="post">
-        <input id='input_artist' type="text" placeholder=" Artist Name">
-      </form>
-      <form id="linkInput"  action="index.html" method="post">
-        <input id='input_link' type="text" placeholder="Insert link">
-      </form>
-      <p class="btn">
-        <button id="button">Add New Song!</button>
-      </p>
-    </div>
+
 
 
     <script id='songlist'type='text/template'>
