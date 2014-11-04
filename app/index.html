@@ -29,7 +29,18 @@
       <div id='playlist'>
       </div>
 
-      <div class='add-new'>
+      <div id='addnew'>
+      </div>
+    </div>
+
+
+
+
+    <script id='songlist'type='text/template'>
+      <li> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
+    </script>
+
+    <script id='newsong' type='text/template'>
       <h2>Add a new song</h2>
         <form id="titleInput"  action="index.html" method="post">
           <input id='input_title' type="text" placeholder=" Song Title">
@@ -43,15 +54,7 @@
         <p class="btn">
           <button id="button">Add New Song!</button>
         </p>
-      </div>
-    </div>
-
-
-
-
-    <script id='songlist'type='text/template'>
-      <li> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
-    </script>
+      </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

@@ -6,20 +6,13 @@
 
 
     App.work_playlist.fetch().done(function(){
-
-
-      console.log(App.work_playlist);
-
+      //console.log(App.work_playlist);
       App.musicview = new App.Views.playlistView({
-      //  console.log('hi');
-        //list: work_playlist,
-
-        //console.log(list);
       });
-      //console.log(musicview);
-    //console.log(work_playlist);
 
     });
+
+    new App.Views.AddSong();
 
     $('.btn button').on('click', function(event){
       event.preventDefault();
