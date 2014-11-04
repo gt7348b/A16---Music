@@ -8,7 +8,7 @@ var Song = Backbone.Model.extend({
   idAttribute: '_id',
 
   initialize: function(){
-    console.log('Lucky?')
+  //  console.log('Lucky?')
   }
 
 });
