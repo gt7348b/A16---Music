@@ -14,7 +14,7 @@ work_playlist.fetch().done(function(){
 
     //console.log(list);
   });
-  console.log(musicview);
+  //console.log(musicview);
 //console.log(work_playlist);
 
 });
@@ -29,13 +29,17 @@ $('.btn button').on('click', function(event){
 
   });
 
-      console.log(newsong);
+    //  console.log(newsong);
 
   work_playlist.add(newsong);
 
-  console.log(work_playlist);
+  //console.log(work_playlist);
 
   newsong.save();
+
+//  $("#input_title")[0].reset();
+//  $("#input_artist")[0].reset();
+//  $("#input_link")[0].reset();
 
   work_playlist.fetch().done(function(){
 
