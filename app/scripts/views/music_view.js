@@ -1,27 +1,31 @@
-var playlistView = Backbone.View.extend({
+(function(){
 
-  tagName: 'ul',
-  className: 'musiclist',
+    App.Views.playlistView = Backbone.View.extend({
 
-  initialize: function(options){
-    //console.log('initialized');
-    this.render(options.list);
-  },
+      tagName: 'ul',
+      className: 'musiclist',
 
-  render: function(list){
-    var self = this;
-    var template = $('#songlist').html();
-    var render_song = _.template(template);
+      initialize: function(){
+        //console.log('initialized');
+        this.render(App.work_playlist);
+      },
 
-    _.each(list.models, function(item){
+      render: function(){
+        var self = this;
+        var template = $('#songlist').html();
+        var render_song = _.template(template);
 
-      self.$el.append(render_song(item.attributes));
+        _.each(App.work_playlist.models, function(item){
+
+          self.$el.append(render_song(item.attributes));
+
+        });
+
+        $('#playlist').html(this.el);
+
+        return this;
+      },
 
     });
 
-    $('#playlist').html(this.el);
-
-    return this;
-  },
-
-});
+}());
