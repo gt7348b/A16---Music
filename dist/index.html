@@ -21,20 +21,7 @@
       <div id='playlist'>
       </div>
 
-      <div class='add-new'>
-      <h2>Add a new song</h2>
-        <form id="titleInput"  action="index.html" method="post">
-          <input id='input_title' type="text" placeholder=" Song Title">
-        </form>
-        <form id="artistInput"  action="index.html" method="post">
-          <input id='input_artist' type="text" placeholder=" Artist Name">
-        </form>
-        <form id="linkInput"  action="index.html" method="post">
-          <input id='input_link' type="text" placeholder=" Insert link">
-        </form>
-        <p class="btn">
-          <button id="button">Add New Song!</button>
-        </p>
+      <div id='addnew'>
       </div>
     </div>
 
@@ -42,8 +29,20 @@
 
 
     <script id='songlist'type='text/template'>
-      <li> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
+      <li id='<%= _id %>'> <a href='<%= link %>'> <%= title %> </a> by <%= artist %> </li>
     </script>
+
+    <script id='newsong' type='text/template'>
+      <h2>Add a new song</h2>
+        <form id="songInput"  action="index.html" method="post">
+          <input id='input_title' type="text" placeholder=" Song Title">
+          <input id='input_artist' type="text" placeholder=" Artist Name">
+          <input id='input_link' type="text" placeholder=" Insert link">
+          <p class="btn">
+            <button id="button">Add New Song!</button>
+          </p>
+        </form>
+      </script>
 
     <script src="scripts/vendor.js"></script>
 
