@@ -23,7 +23,7 @@
 
       var music = App.work_playlist.get(id);
       console.log(id);
-      new App.Views.editmusicView(music);
+      new App.Views.editmusicView({ song: music });
 
     }
 

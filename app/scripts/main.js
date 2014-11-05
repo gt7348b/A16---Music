@@ -6,8 +6,8 @@
 
 
     App.work_playlist.fetch().done(function(){
-      //console.log(App.work_playlist);
-      
+      console.log(App.work_playlist);
+
       App.router = new App.Routers.approuter();
     });
 
