@@ -2,6 +2,7 @@
           App.Models = {};
           App.Collections = {};
           App.Views = {};
+          App.Routers = {};
 
 (function(){
 
@@ -49,7 +50,7 @@
         this.render(App.work_playlist);
 
         App.work_playlist.on('sync', this.render, this);
-        App.work_playlist.on('destry', this.render, this);
+        App.work_playlist.on('destroy', this.render, this);
       },
 
       render: function(){
@@ -134,19 +135,116 @@
 
 (function(){
 
+  App.Views.editmusicView = Backbone.View.extend({
+
+    tagName: 'ul',
+    className: 'editmusic',
+
+    events: {
+
+      'submit #editbtn': 'updateSong',
+      'click #deletebtn': 'deleteSong'
+    },
+
+    template: _.template($('#editmusicitem').html()),
+
+    initialize: function(options){
+      this.options = options;
+      this.render();
+
+      $('#playlist').html(this.$el);
+    },
+
+    render: function(){
+
+      this.$el.empty();
+
+      this.$el.html(template(this.options.song.toJSON()));
+
+    },
+
+    updateSong: function(e){
+      e.preventDefault();
+
+      this.options.song.set({
+        title: $('#edit_title').val(),
+        artist: $('#edit_artist').val(),
+        link:   $('#edit_link').val()
+
+      });
+
+      //Save the edit
+      this.options.song.save();
+
+      //Go back to main page
+      App.router.navigate('', {trigger: true});
+
+    },
+
+    deleteSong: function(c){
+      c.preventDefault();
+
+      //Remove Song
+      this.options.song.destroy();
+
+      //Return to home page
+      App.router.navigate('', {trigger: true});
+
+    }
+
+  })
+
+}());
+
+(function (){
+
+  App.Routers.approuter = Backbone.Router.extend({
+
+    initialize: function(){
+      Backbone.history.start();
+    },
+
+    routes: {
+      '': 'home',
+      'edit/:id': 'editmusic'
+    },
+
+    home: function(){
+      console.log('show home function')
+
+      App.musicview = new App.Views.playlistView({
+      });
+      new App.Views.AddSong();
+    },
+
+    editmusic: function(id){
+
+      var music = App.work_playlist.get(id);
+      console.log(id);
+      new App.Views.editmusicView({ song: music });
+
+    }
+
+  })
+
+
+}());
+
+(function(){
+
     //Create playlist
 
     App.work_playlist = new App.Collections.Playlist();
 
 
     App.work_playlist.fetch().done(function(){
-      //console.log(App.work_playlist);
-      App.musicview = new App.Views.playlistView({
-      });
+      console.log(App.work_playlist);
 
+      App.router = new App.Routers.approuter();
     });
 
-    new App.Views.AddSong();
+
+
 
 
 }());
