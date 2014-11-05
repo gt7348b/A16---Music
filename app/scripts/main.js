@@ -7,12 +7,12 @@
 
     App.work_playlist.fetch().done(function(){
       //console.log(App.work_playlist);
-      App.musicview = new App.Views.playlistView({
-      });
-
+      
+      App.router = new App.Routers.approuter();
     });
 
-    new App.Views.AddSong();
+
+
 
 
 }());

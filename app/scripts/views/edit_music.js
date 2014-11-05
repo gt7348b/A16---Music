@@ -1,11 +1,10 @@
-(function(
+(function(){
 
-  App.Views.editmusicView = Backbone.Views.extend({
+  App.Views.editmusicView = Backbone.View.extend({
 
     tagName: 'ul',
     className: 'editmusic',
-
-
+    
 
     initialize: function(){
       this.render
@@ -18,4 +17,4 @@
 
   })
 
-){}());
+}());
