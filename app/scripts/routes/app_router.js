@@ -17,8 +17,15 @@
       App.musicview = new App.Views.playlistView({
       });
       new App.Views.AddSong();
-    }
+    },
 
+    editmusic: function(id){
+
+      var music = App.work_playlist.get(id);
+      console.log(id);
+      new App.Views.editmusicView(music);
+
+    }
 
   })
 
