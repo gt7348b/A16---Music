@@ -14,7 +14,7 @@
         this.render(App.work_playlist);
 
         App.work_playlist.on('sync', this.render, this);
-        App.work_playlist.on('destry', this.render, this);
+        App.work_playlist.on('destroy', this.render, this);
       },
 
       render: function(){
