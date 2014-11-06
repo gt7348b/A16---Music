@@ -7,7 +7,7 @@
 
     events: {
 
-      'submit #editbtn': 'updateSong',
+      'click #editbtn': 'updateSong',
       'click #deletebtn': 'deleteSong'
     },
 
@@ -16,6 +16,8 @@
     initialize: function(options){
       this.options = options;
       this.render();
+
+      $('#addnew').empty();
 
       $('#playlist').html(this.$el);
     },
