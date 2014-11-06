@@ -10,7 +10,7 @@
       },
 
       initialize: function(){
-        //console.log('initialized');
+        console.log('initialized');
         this.render(App.work_playlist);
 
         App.work_playlist.on('sync', this.render, this);
