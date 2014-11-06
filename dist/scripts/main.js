@@ -46,7 +46,7 @@
       },
 
       initialize: function(){
-        //console.log('initialized');
+        console.log('initialized');
         this.render(App.work_playlist);
 
         App.work_playlist.on('sync', this.render, this);
@@ -156,10 +156,10 @@
     },
 
     render: function(){
-
+      console.log(this);
       this.$el.empty();
-
-      this.$el.html(template(this.options.song.toJSON()));
+      this.$el.html($('#editmusicitem').html());
+      //this.$el.html(template(this.options.song.toJSON()));
 
     },
 
@@ -212,7 +212,7 @@
     home: function(){
       console.log('show home function')
 
-      App.musicview = new App.Views.playlistView({
+      new App.Views.playlistView({ collection: App.work_playlist
       });
       new App.Views.AddSong();
     },
