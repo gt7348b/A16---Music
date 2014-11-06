@@ -14,7 +14,7 @@
     home: function(){
       console.log('show home function')
 
-      App.musicview = new App.Views.playlistView({
+      new App.Views.playlistView({ collection: App.work_playlist
       });
       new App.Views.AddSong();
     },
