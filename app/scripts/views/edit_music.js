@@ -21,10 +21,10 @@
     },
 
     render: function(){
-
+      console.log(this);
       this.$el.empty();
-
-      this.$el.html(template(this.options.song.toJSON()));
+      this.$el.html($('#editmusicitem').html());
+      //this.$el.html(template(this.options.song.toJSON()));
 
     },
 
