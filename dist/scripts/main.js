@@ -163,7 +163,8 @@
 
     render: function(song){
       console.log(this);
-
+      console.log(this.options.song.attributes.title);
+      title = this.options.song.attributes.title;
       this.$el.empty();
       this.$el.html($('#editmusicitem').html());
       //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
