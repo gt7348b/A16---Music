@@ -29,13 +29,26 @@ body {
 
     li {
       background-color: white;
-      
+      @include margin (5px 0px 5px 0px);
+      @include padding (0 .5em 0 .5em);
+
     }
 
     span {
       background-color: black;
       color: white;
       font-weight: bold;
+      @include padding (0 .1em 0 .1em);
+      float: right;
+    }
+
+
+    button {
+      font-weight: bold;
+      color: black;
+      float: right;
+      font-size: .7em;
+      @include margin (0 .5em 0 .5em);
     }
 
   }
