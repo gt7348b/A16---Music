@@ -19,7 +19,7 @@ body {
   border-radius: 6px;
   padding: 60px;
 
-  background-image: src(images/fromthesea);
+  background-image: url(images/fromthesea.JPG);
 
   h1 {
     font-size: 60px;
@@ -54,6 +54,9 @@ body {
       //background-color: hsla(296, 100%, 53%, 1);
     }
 
+    li:hover {
+      background-color: red;
+    }
   }
 
 }
