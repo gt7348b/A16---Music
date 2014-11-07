@@ -30,21 +30,23 @@
 
     <script id='songlist'type='text/template'>
       <li id='<%= _id %>'>
-        <a href='#/edit/<%= _id %>'>
           <div class='songitem'>
-            <!--<a href='<%= link %>'> --> <%= title %> <!--</a>--> by <%= artist %>
+            <a href='<%= link %>'><%= title %></a> by <%= artist %>
+            <a href='#/edit/<%= _id %>'>
+              <button id="<%= _id %>" class='edit_btn'>Edit</button>
+            </a>
             <span id="<%= _id %>" class='delete_btn'>  X</span>
           </div>
-        </a>
+
       </li>
     </script>
 
     <script type='text/template' id='editmusicitem'>
-      <li id='<%= _id%>'>
-        <form id="editInput"  action="index.html" method="post">
-          <input id='edit_title' type="text" placeholder=" Song Title">
-          <input id='edit_artist' type="text" placeholder=" Artist Name">
-          <input id='edit_link' type="text" placeholder=" Insert link">
+      <li id='<%= _id %>'>
+        <form id="editInput">
+          <input id='edit_title' type="text" value= '<%= title %>'>
+          <input id='edit_artist' type="text" value=" Artist Name">
+          <input id='edit_link' type="text" value=" Insert link">
           <p class="btn">
             <button id="editbtn">Edit Song!</button>
             <button id='deletebtn'>Delete</button>

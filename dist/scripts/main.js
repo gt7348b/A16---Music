@@ -47,6 +47,8 @@
 
       initialize: function(){
         console.log('initialized');
+
+
         this.render(App.work_playlist);
 
         App.work_playlist.on('sync', this.render, this);
@@ -57,6 +59,8 @@
         var self = this;
         var template = $('#songlist').html();
         var render_song = _.template(template);
+
+        this.$el.empty();
 
         _.each(App.work_playlist.models, function(item){
 
@@ -142,7 +146,7 @@
 
     events: {
 
-      'submit #editbtn': 'updateSong',
+      'click #editbtn': 'updateSong',
       'click #deletebtn': 'deleteSong'
     },
 
@@ -152,14 +156,17 @@
       this.options = options;
       this.render();
 
+      $('#addnew').empty();
+
       $('#playlist').html(this.$el);
     },
 
-    render: function(){
+    render: function(song){
       console.log(this);
+
       this.$el.empty();
       this.$el.html($('#editmusicitem').html());
-      //this.$el.html(template(this.options.song.toJSON()));
+      //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
 
     },
 
