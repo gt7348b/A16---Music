@@ -40,11 +40,12 @@
       <li id='<%= _id %>'>
           <div class='songitem'>
             <a href='<%= link %>'><%= title %></a> by <%= artist %>
+            <span id="<%= _id %>" class='delete_btn'>  X</span>
             <a href='#/edit/<%= _id %>'>
               <button id="<%= _id %>" class='edit_btn'>Edit</button>
             </a>
-            <span id="<%= _id %>" class='delete_btn'>  X</span>
           </div>
+
 
       </li>
     </script>
