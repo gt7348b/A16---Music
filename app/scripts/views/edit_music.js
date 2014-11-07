@@ -22,11 +22,12 @@
       $('#playlist').html(this.$el);
     },
 
-    render: function(){
+    render: function(song){
       console.log(this);
+
       this.$el.empty();
       this.$el.html($('#editmusicitem').html());
-      //this.$el.html(template(this.options.song.toJSON()));
+      //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
 
     },
 
