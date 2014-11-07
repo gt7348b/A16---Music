@@ -19,6 +19,8 @@ body {
   border-radius: 6px;
   padding: 60px;
 
+  background-image: src(images/fromthesea);
+
   h1 {
     font-size: 60px;
     line-height: 1;
@@ -45,10 +47,11 @@ body {
 
     button {
       font-weight: bold;
-      color: black;
+      color: white;
       float: right;
       font-size: .7em;
       @include margin (0 .5em 0 .5em);
+      //background-color: hsla(296, 100%, 53%, 1);
     }
 
   }
