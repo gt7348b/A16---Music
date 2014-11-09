@@ -41,7 +41,13 @@ body {
       background-color: white;
       @include margin (5px 0px 5px 0px);
       @include padding (0 .5em 0 .5em);
+      opacity: 0.5
 
+    }
+
+    a {
+      text-decoration: none;
+      font-weight: bold;
     }
 
     span {
@@ -50,20 +56,26 @@ body {
       font-weight: bold;
       @include padding (0 .1em 0 .1em);
       float: right;
+      border-radius: 0.5em;
+      font-size: .5em;
+      height: 3em;
     }
 
 
     button {
       font-weight: bold;
-      color: white;
+      color: black;
       float: right;
-      font-size: .7em;
+      font-size: .5em;
+      height: 3em;
       @include margin (0 .5em 0 .5em);
+
       //background-color: hsla(296, 100%, 53%, 1);
     }
 
     li:hover {
       background-color: hsla(296, 100%, 53%, 1);
+      opacity: 1;
     }
   }
 
