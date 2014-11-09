@@ -163,10 +163,13 @@
 
     render: function(song){
       console.log(this);
-      console.log(this.options.song.attributes.title);
-      title = this.options.song.attributes.title;
+      console.log(this.options.song.attributes.artist);
+      var template = _.template($('#editmusicitem').html());
       this.$el.empty();
-      this.$el.html($('#editmusicitem').html());
+      console.log(template);
+      link = this.options.song.attributes.link;
+      artist = this.options.song.attributes.artist;
+      this.$el.html(this.template(this.options.song.attributes));
       //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
 
     },
