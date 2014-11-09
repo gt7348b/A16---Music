@@ -24,6 +24,7 @@ body {
 
   background-image: url(../images/sittingaround.JPG);
 
+
   h1 {
     font-size: 60px;
     line-height: 1;
@@ -31,6 +32,10 @@ body {
   }
 
   .list {
+
+    ul {
+      list-style-type: none;
+    }
 
     li {
       background-color: white;
@@ -58,7 +63,7 @@ body {
     }
 
     li:hover {
-      background-color: red;
+      background-color: hsla(296, 100%, 53%, 1);
     }
   }
 

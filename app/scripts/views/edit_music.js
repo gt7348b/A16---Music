@@ -24,9 +24,11 @@
 
     render: function(song){
       console.log(this);
-      console.log(this.options.song.attributes.title);
-      title = this.options.song.attributes.title;
+      console.log(this.options.song.attributes.artist);
       this.$el.empty();
+      title = this.options.song.attributes.title;
+      link = this.options.song.attributes.link;
+      artist = this.options.song.attributes.artist;
       this.$el.html($('#editmusicitem').html());
       //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
 
