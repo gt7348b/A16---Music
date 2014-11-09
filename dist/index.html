@@ -15,7 +15,7 @@
   </head>
   <body>
 
-    <div class="hero-unit">
+    <div class="container">
       <h1>Music List</h1>
       <p>This is a list of music that helps me code. Please add or edit the songs:</p>
       <div id='playlist' class='list'>
@@ -45,11 +45,11 @@
     </script>
 
     <script type='text/template' id='editmusicitem'>
-      <li id='<%= _id %>'>
+      <li class= 'editform' id='<%= _id %>'>
         <form id="editInput">
-          <input id='edit_title' type="text" value= '<%= title %>'>
-          <input id='edit_artist' type="text" value=" <%= artist %>">
-          <input id='edit_link' type="text" value=" <%= link %>">
+          <input id='edit_title' type="text" value= '<%= title %>'><br>
+          <input id='edit_artist' type="text" value=" <%= artist %>"><br>
+          <input id='edit_link' type="text" value="<%= link %>">
           <p class="btn">
             <button id="editbtn">Edit Song!</button>
             <button id='deletebtn'>Delete</button>
