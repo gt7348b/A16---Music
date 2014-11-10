@@ -1,3 +1,6 @@
+Parse.initialize("dq8BpBagx8FKW9IRjNiZsDxbkGIdnzKMzzeABvho", "r6aeI6bmmaHj7wyhT6aKVdu5lB7Gd5G8dsqf8hWQ");
+
+
 (function(){
 
     //Create playlist

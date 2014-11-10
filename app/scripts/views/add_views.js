@@ -1,6 +1,6 @@
 (function(){
 
-    App.Views.AddSong = Backbone.View.extend({
+    App.Views.AddSong = Parse.View.extend({
 
         el: '#addnew',
 

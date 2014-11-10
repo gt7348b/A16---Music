@@ -1,6 +1,6 @@
 (function(){
 
-    App.Views.playlistView = Backbone.View.extend({
+    App.Views.playlistView = Parse.View.extend({
 
       tagName: 'ul',
       className: 'musiclist',
@@ -14,7 +14,7 @@
 
 
         this.render(App.work_playlist);
-
+        console.log('HERE!!');
         App.work_playlist.on('sync', this.render, this);
         App.work_playlist.on('destroy', this.render, this);
       },
@@ -28,9 +28,9 @@
 
         _.each(App.work_playlist.models, function(item){
 
-          self.$el.append(render_song(item.attributes));
+          self.$el.append(render_song(item.toJSON()));
 
-          //console.log(item.id);
+          console.log(item.id);
 
         });
 

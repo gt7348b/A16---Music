@@ -1,6 +1,6 @@
 (function(){
 
-  App.Views.editmusicView = Backbone.View.extend({
+  App.Views.editmusicView = Parse.View.extend({
 
     tagName: 'ul',
     className: 'editmusic',
@@ -24,13 +24,13 @@
 
     render: function(song){
       console.log(this);
-      console.log(this.options.song.attributes.artist);
+      //console.log(this.options.song.attributes.artist);
       var template = _.template($('#editmusicitem').html());
       this.$el.empty();
-      console.log(template);
+      //console.log(template);
       link = this.options.song.attributes.link;
       artist = this.options.song.attributes.artist;
-      this.$el.html(this.template(this.options.song.attributes));
+      this.$el.html(this.template(this.options.song.toJSON()));
       //console.log(this.$el.html($('#editmusicitem').html(this.options.song.attr())));
 
     },

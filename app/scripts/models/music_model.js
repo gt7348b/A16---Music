@@ -1,13 +1,16 @@
 (function(){
 
-    App.Models.Song = Backbone.Model.extend({
+    App.Models.Song = Parse.Object.extend({
+
+      className: 'Music',
+
       defaults: {
         title: '',
         artist: '',
         link: ''
       },
 
-      idAttribute: '_id',
+      idAttribute: 'objectId',
 
       initialize: function(){
       //  console.log('Lucky?')

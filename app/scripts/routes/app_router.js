@@ -1,9 +1,9 @@
 (function (){
 
-  App.Routers.approuter = Backbone.Router.extend({
+  App.Routers.approuter = Parse.Router.extend({
 
     initialize: function(){
-      Backbone.history.start();
+      Parse.history.start();
     },
 
     routes: {
