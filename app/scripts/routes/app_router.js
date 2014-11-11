@@ -8,7 +8,8 @@
 
     routes: {
       '': 'home',
-      'edit/:id': 'editmusic'
+      'edit/:id': 'editmusic',
+      'add/'    : 'addmusic'
     },
 
     home: function(){
@@ -16,7 +17,7 @@
 
       new App.Views.playlistView({ collection: App.work_playlist
       });
-      new App.Views.AddSong();
+
     },
 
     editmusic: function(id){
@@ -24,6 +25,12 @@
       var music = App.work_playlist.get(id);
       console.log(id);
       new App.Views.editmusicView({ song: music });
+
+    },
+
+    addmusic: function(){
+      console.log("HERE!")
+      new App.Views.AddSong();
 
     }
 
