@@ -9,7 +9,7 @@
     routes: {
       '': 'home',
       'edit/:id': 'editmusic',
-      'add/'    : 'addmusic'
+      //'add/'    : 'addmusic'
     },
 
     home: function(){
@@ -17,8 +17,10 @@
 
       new App.Views.playlistView({ collection: App.work_playlist
       });
-
+      new App.Views.AddSong();
     },
+
+
 
     editmusic: function(id){
 
@@ -28,11 +30,11 @@
 
     },
 
-    addmusic: function(){
-      console.log("HERE!")
-      new App.Views.AddSong();
+  //  addmusic: function(){
+//      console.log("HERE!")
+  //    new App.Views.AddSong();
 
-    }
+    //}
 
   })
 

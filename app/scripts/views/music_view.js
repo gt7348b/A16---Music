@@ -14,6 +14,7 @@
 
 
         this.render(App.work_playlist);
+
         App.work_playlist.on('sync', this.render, this);
         App.work_playlist.on('destroy', this.render, this);
       },
@@ -26,14 +27,14 @@
         this.$el.empty();
 
         _.each(App.work_playlist.models, function(item){
-
+          console.log(item);
           self.$el.append(render_song(item.toJSON()));
 
-          console.log(item.id);
+          console.log(item.title);
 
         });
 
-        $('#playlist').html(this.el);
+        $('#playlist').html(this.$el);
 
         return this;
       },

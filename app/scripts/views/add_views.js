@@ -14,8 +14,8 @@
 
         initialize: function(options){
           console.log('initialized');
-          this.options = options;
           this.render();
+          $('#playlist').html(this.$el);
         },
 
         render: function(){
@@ -41,7 +41,7 @@
           newsong.save();
 
           //Go back to main page
-          App.router.navigate('', {trigger: true});
+          //App.router.navigate('', {trigger: true});
 
         },
 
