@@ -1,3 +1,4 @@
+
 (function(){
 
     App.Views.playlistView = Parse.View.extend({
@@ -27,14 +28,14 @@
         this.$el.empty();
 
         _.each(App.work_playlist.models, function(item){
-          console.log(item);
-          self.$el.append(render_song(item.toJSON()));
 
-          console.log(item.title);
+          self.$el.append(render_song(item.attributes.toJSON));
+
+          //console.log(item.id);
 
         });
 
-        $('#playlist').html(this.$el);
+        $('#playlist').html(this.el);
 
         return this;
       },

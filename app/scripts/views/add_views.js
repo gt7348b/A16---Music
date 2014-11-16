@@ -2,20 +2,14 @@
 
     App.Views.AddSong = Parse.View.extend({
 
-        //el: '#addnew',
-        className: 'addmusic',
+        el: '#addnew',
 
         events: {
           'submit #songInput': 'addNewSong'
         },
 
-
-        template: _.template($('#newsong').html()),
-
-        initialize: function(options){
-          console.log('initialized');
+        initialize: function(){
           this.render();
-          $('#playlist').html(this.$el);
         },
 
         render: function(){
@@ -40,9 +34,7 @@
 
           newsong.save();
 
-          //Go back to main page
-          //App.router.navigate('', {trigger: true});
-
+          $('#songInput')[0].reset();
         },
 
     })
