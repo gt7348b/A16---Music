@@ -10,14 +10,17 @@
         'click span': 'deleteSong'
       },
 
-      initialize: function(){
-        console.log('initialized');
+      initialize: function(options){
+        console.log(options);
 
+        this.options = options;
 
-        this.render(App.work_playlist);
-
+        this.collection.off();
         App.work_playlist.on('sync', this.render, this);
         App.work_playlist.on('destroy', this.render, this);
+
+        this.render();
+        $('#playlist').html(this.el);
       },
 
       render: function(){
@@ -27,15 +30,15 @@
 
         this.$el.empty();
 
-        _.each(App.work_playlist.models, function(item){
-
-          self.$el.append(render_song(item.attributes.toJSON));
-
-          //console.log(item.id);
+        this.collection.each(function(c){
+          console.log(c);
+          console.log(render_song);
+          console.log(self);
+          self.$el.append(self.render_song(c.toJSON()));
 
         });
 
-        $('#playlist').html(this.el);
+
 
         return this;
       },

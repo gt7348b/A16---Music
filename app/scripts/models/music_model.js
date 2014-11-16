@@ -7,7 +7,7 @@
       defaults: {
         title: '',
         artist: '',
-        link: ''
+        link: '',
       },
 
       idAttribute: 'objectId',
